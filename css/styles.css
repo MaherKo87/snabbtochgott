@@ -5,9 +5,22 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "title-font";
+    src: url("../fonts/cookie/Cookie-Regular.ttf");
+    
+  }
+  @font-face {
+   
+    font-family: "body-font";
+    src: url("../fonts/bubblegum-sans/BubblegumSans-Regular.ttf");
+  }
+
+  
+
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'body-font' , Arial, sans-serif;
     background-color: #fff;
     color: #333;
     text-align: center;
@@ -32,13 +45,22 @@ header {
 }
 
 h1 {
+    font-family: 'title-font';
     font-size: 2.5em;
     margin-top: 10px;
     color: #d34040;
 }
 
-h2{
+h2 {
     margin: 3%;
+}
+
+h3 {
+    margin: 2%;
+}
+
+p {
+    margin: 2%;
 }
 
 .motto {
@@ -49,7 +71,8 @@ h2{
 
 /* Navigation Menu Styling */
 nav {
-    margin-top: 20px;
+   
+    margin: 3em;
 }
 
 .menu {
@@ -63,17 +86,21 @@ nav {
     margin: 0 15px;
 }
 
+
 .menu li a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.2em; 
+    padding: 10px 20px;
+    color: #252424;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .menu li a:hover {
-    color: #007BFF;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
-
 /* Hero Section */
 .hero {
     color: #c75252;
@@ -84,33 +111,98 @@ nav {
     width: 100%;
     max-width: 600px;
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px;
+}
+
+/* om oss styling */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about .oss-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.about p {
+    margin-bottom: 3em;
+    padding: 0 20px;
+    text-align:left;
+}
+
+.about .cook-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2em;
+}
+
+.about .cook-image {
+    width: 45%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* kontakt form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 80%;
+    /* Adjust this to fit the design */
+}
+
+.contact-element {
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    /* Fixed width to maintain consistency */
+    height: auto;
+    border: solid 1px #8f4242;
+    text-align: center;
 }
 
 /* Product List Styling */
 .product-list {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap */
+    flex-wrap: wrap;
+    /* Allows items to wrap */
     justify-content: center;
     margin: 20px auto;
     padding: 20px;
-    max-width: 80%; /* Adjust this to fit the design */
+    max-width: 80%;
+    /* Adjust this to fit the design */
 }
 
 .product-item {
     margin: 10px;
     padding: 20px;
-    width: 300px; /* Fixed width to maintain consistency */
+    width: 300px;
+    /* Fixed width to maintain consistency */
     height: auto;
     border: solid 1px #ddd;
     text-align: center;
 }
 
 .product-image {
-    width: 100%; /* Ensures the image fills the carousel slide */
+    width: 100%;
+    /* Ensures the image fills the carousel slide */
     height: 100%;
-    max-height: 200px; /* Adjust as needed */
-    object-fit: cover; /* Maintains aspect ratio and covers the container */
+    max-height: 200px;
+    /* Adjust as needed */
+    object-fit: cover;
+    /* Maintains aspect ratio and covers the container */
     border-radius: 30px;
 }
 
@@ -123,10 +215,10 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #ddd;  
-    overflow: hidden;        
-    padding: 10px;  
-    border-radius: 10px;               
+    border: 2px solid #ddd;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /* Carousel Slide Styling */
@@ -139,10 +231,14 @@ nav {
 }
 
 .carousel-image {
-    width: 100%;      /* Make the image take up full width */
-    max-width: 400px;  /* Limit image size */
-    max-height: 250px; /* Uniform height for all images */
-    object-fit: cover; /* Fill the image container while maintaining aspect ratio */
+    width: 100%;
+    /* Make the image take up full width */
+    max-width: 400px;
+    /* Limit image size */
+    max-height: 250px;
+    /* Uniform height for all images */
+    object-fit: cover;
+    /* Fill the image container while maintaining aspect ratio */
     border-radius: 10px;
 }
 
@@ -161,11 +257,15 @@ nav {
     border-radius: 50%;
     font-size: 1em;
 }
+
 .glide__arrow--left {
-    left: 10px; /* Adjust position */
+    left: 10px;
+    /* Adjust position */
 }
+
 .glide__arrow--right {
-    right: 10px; /* Adjust position */
+    right: 10px;
+    /* Adjust position */
 }
 
 .glide__arrow:hover {
@@ -184,17 +284,45 @@ footer {
         max-width: 90%;
     }
 
+    .menu {
+        flex-direction: column;  /* Change layout to vertical */
+        align-items: center;
+        border: solid;
+        border-radius: 2px;
+    }
+
+    .menu li {
+        margin-bottom: 10px;  /* Add space between items */
+        
+    }
+    .menu li a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #252424;
+        background-color: #a7ccf4;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .menu li a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+
     .glide__arrows {
-        display: none; /* Hide arrows on small screens */
+        display: none;
+        /* Hide arrows on small screens */
     }
 
-    
-    .carousel-image{
-        width:50%;
+
+    .carousel-image {
+        width: 50%;
     }
 
-   /*  .glide__bullet {
+    /*  .glide__bullet {
         width: 10px;
         height: 10px;
     } */
+
 }
